@@ -26,4 +26,9 @@
 * origin 이라는 이름으로 github 의 원격 respository 주소를 등록하는 절차
 
 5. 프로젝트를 압축하여 local repository(.git 폴더)에 저장하기
+* git add .
 * git commit -m "Comment"
+
+6. 업로드하기
+* git push -u origin master
+
