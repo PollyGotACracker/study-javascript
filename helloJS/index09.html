@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>DIV 1</div>
+    <div>DIV 2</div>
+    <div>DIV 3</div>
+  </body>
+  <script>
+    /*
+    div tag 첫번째 : 테두리 blue, 1px, solid
+    div tag 두번째 : 바탕색 yellow
+    div tag 세번째 : 글자색 blue
+    */
+
+    const divTags = document.querySelectorAll("div");
+    const div0style = divTags[0].style;
+
+    div0style.borderStyle = "solid";
+    div0style.borderWidth = "1px";
+    div0style.borderColor = "blue";
+    divTags[1].style.backgroundColor = "yellow";
+    divTags[2].style.color = "blue";
+
+    // const divValue = {
+    //   bStyle: "solid",
+    //   bWidth: "1px",
+    //   bColor: "blue",
+    // };
+    // div0Style.borderStyle = divValue.bStyle;
+    // div0style.borderWidth = divValue.bWidth;
+    // div0style.borderColor = divValue.bColor;
+  </script>
+</html>
