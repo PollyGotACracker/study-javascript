@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+  </head>
+  <body>
+    <form id="form">
+      <input id="txt" placeholder="이름을 입력하세요" />
+    </form>
+  </body>
+  <script>
+    /**
+     * input box 에 이름을 입력하고 Enter 를 눌렀을 때
+     * 만약 아무것도 입력되지 않았으면
+     * alert("이름을 입력하세요")
+     *
+     * 홍길동 이라는 이름을 입력하면
+     * alert("홍길동 관리자님 반갑습니다")
+     *
+     * 이몽룡 이라는 이름을 입력하면
+     * alert("이몽룡 손님 반갑습니다")
+     *
+     * 그 외 이름을 입력하면
+     * alert(~~~ 님 어서오세요)
+     */
+
+    const formBox = document.querySelector("#form");
+    const inputName = document.querySelector("#txt");
+
+    formBox.addEventListener("submit", () => {
+      const nameVal = inputName.value;
+
+      if (!nameVal) {
+        alert("이름을 입력하세요");
+        // 만약 이름을 입력하지 않았다면 다음으로 코드가 진행되는 것을
+        // 막기 위하여 return 으로 코드 흐름을 중단해야 한다
+        return;
+      } else if (nameVal === "홍길동") {
+        alert(nameVal + " 관리자님 반갑습니다");
+      } else if (nameVal === "이몽룡") {
+        alert(nameVal + " 손님 반갑습니다");
+      } else {
+        alert(nameVal + " 님 어서오세요");
+      }
+
+      //   switch (nameVal) {
+      //     case "":
+      //       alert("이름을 입력하세요");
+      //       break;
+      //     case "홍길동":
+      //       alert("홍길동 관리자님 반갑습니다");
+      //       break;
+      //     case "이몽룡":
+      //       alert("이몽룡 손님 반갑습니다");
+      //       break;
+      //     default:
+      //       alert(nameVal + " 님 어서오세요");
+      //   }
+    });
+  </script>
+</html>

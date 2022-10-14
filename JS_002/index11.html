@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+  </head>
+  <body>
+    <form id="form">
+      <input id="num" placeholder="정수 입력" />
+    </form>
+  </body>
+  <script>
+    const form = document.querySelector("#form");
+    const inputNum = document.querySelector("#num");
+
+    form.addEventListener("submit", () => {
+      const txtNum = inputNum.value;
+
+      /**
+       *  num 에 입력된 숫자가 100 이상 200 이하인가를 검사
+       */
+      // if(100 <= num <= 200) : X(불가), 파이썬에서만 가능
+      // 관계연산
+      // AND 연산 : 두 가지 조건을 모두 만족해야 할 경우
+      if (txtNum >= 100 && txtNum <= 200) {
+        alert("OK");
+      }
+      // OR 연산 : 두 가지 조건 중 한 가지만 만족해도 좋은 경우
+      if (txtNum < 100 || txtNum > 200) {
+        alert("OR");
+      }
+    });
+  </script>
+</html>
