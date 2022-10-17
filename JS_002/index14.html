@@ -95,7 +95,9 @@
         inputNum2.focus();
         result.innerText = "";
         return false;
-      } else if (txtOp === "+") {
+      }
+
+      if (txtOp === "+") {
         result.innerText = intNum1 + intNum2;
         op.focus();
         return false;

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+  </head>
+  <body></body>
+  <script>
+    let num1 = 0;
+    let sum = 0;
+
+    document.writeln(num1++); // 0 -> 1
+    document.writeln((sum += num1)); // 0 + 1 = 1
+    document.writeln("<br />");
+
+    document.writeln(num1++); // 1 -> 2
+    document.writeln((sum += num1)); // 1 + 2 = 3
+    document.writeln("<br />");
+
+    document.writeln(num1++); // 2 -> 3
+    document.writeln((sum += num1)); // 3 + 3 = 6
+    document.writeln("<br />");
+
+    // 누적 연산: 이전에 연산한 결과값에 새롭게 연산하여 값을 저장하는 과정
+  </script>
+</html>
