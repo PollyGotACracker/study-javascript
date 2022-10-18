@@ -20,16 +20,17 @@ btnSubmit?.addEventListener("click", () => {
     alert("아이디를 입력하세요");
     inputUser.focus();
     return false;
-  } else if (!pwVal) {
+  }
+  if (!pwVal) {
     alert("비밀번호를 입력하세요");
     inputPw.focus();
     return false;
-  } else if (!rePwVal) {
+  }
+  if (!rePwVal) {
     alert("비밀번호 확인란을 입력하세요");
     inputRePw.focus();
     return false;
   }
-
   if (pwVal !== rePwVal) {
     alert("비밀번호와 비밀번호 확인 값이 다릅니다");
     inputPw.value = "";
