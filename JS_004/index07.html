@@ -112,6 +112,20 @@
           form tag 에서 submit 이벤트가 발생할 때
           데이터를 배달할 주소
           이 주소가 지정되지 않으면 화면만 refresh 된다
+
+          cf)
+          input tag 의 name 속성
+          파라미터의 key 설정
+          button type="submit" 클릭 시 
+          URL에 .../?(input의 name 속성 이름)=(input에 사용자가 입력한 값)
+          https://www.google.come/search?q=...
+
+          cf)
+          쿼리스트링 / 파라미터 (Query String; Parameter) : 
+          - URL에서 ? 이후에 생성되는 문자열
+          - key=value 를 & 로 연결
+          - ? 이후에 무조건 검색 키워드가 오지 않으므로 주의!!
+
         -->
         <form
           class="google"

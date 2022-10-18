@@ -5,6 +5,7 @@ const spanSum = document.querySelector("#sum");
 const btnCacl = document.querySelector("button");
 
 /**
+ * cf)
  * Number(): 정수 O, 실수 O, 숫자+문자 X, 문자+숫자 X
  * parseInt(): 정수 O, 실수 X, 숫자+문자 O, 문자+숫자 X
  * parseFloat(): 정수 O, 실수 O, 숫자+문자 O, 문자+숫자 X
@@ -21,6 +22,15 @@ const btnCacl = document.querySelector("button");
 btnCacl?.addEventListener("click", () => {
   const val1 = parseInt(inputNum1.value);
   const val2 = parseInt(inputNum2.value);
+
+  /**
+   * cf)
+   * ES6 Optional Chaining 연산자
+   * 변수명?.
+   * 변수가 참조 누락 가능성이 있을 때 사용
+   * 에러 대신 undefined를 return한다
+   */
+
 
   // if (isNaN(val1) || isNaN(val2)) {
   //   spanSum.innerText = "숫자를 입력하세요";

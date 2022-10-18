@@ -11,7 +11,7 @@ btnOk.addEventListener("click", () => {
    * alert 을 띄우자
    */
 
-  // input 값 변수는 addEventListener 안에 선언해야 한다
+  // cf) input 값 변수는 addEventListener 안에 선언해야 한다
   const txtName = inputName.value;
 
   if (txtName === "") {

@@ -27,6 +27,7 @@ btn.addEventListener("click", () => {
    *    intNum < 100
    */
 
-  // if (조건이 true) {...} else {...}
-  // -> else는 "false"가 아니라 "true가 아닌 경우" 라고 이해할 것
+  // cf) if (조건이 true) {...} else {...}
+  //     else는 "false"가 아니라 "true가 아닌 경우" 라고 이해할 것
+  //     falsy한 값 종류: false, 0, -0, 0n, "", null, undefined, NaN
 });

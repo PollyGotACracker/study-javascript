@@ -15,7 +15,7 @@ btn.addEventListener("click", () => {
    * 0 보다 큰 값이 입력되면 제곱을 계산하여 alert
    */
 
-  // if (txtNum === "")
+  // cf) if (txtNum === "") 과 같음
   if (!txtNum) {
     // 가
     alert("값을 입력하세요");

@@ -35,7 +35,7 @@ for (num1 = 0; num1 < 10; num1 += 2) {
 console.log("");
 console.log("");
 
-// 몇 번 반복 수행했는지 직관적으로 알기 위해 조건식에 = 를 쓰지 않음
+// cf) 몇 번 반복 수행했는지 직관적으로 알기 위해 조건식에 = 를 쓰지 않음
 for (let i = 0; i < 10; i++) {
   console.log(i);
 }

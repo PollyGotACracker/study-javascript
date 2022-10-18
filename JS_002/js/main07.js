@@ -28,7 +28,7 @@ btnOk.addEventListener("click", () => {
   //     alert(numVal);
   //   }
 
-  // 참고: 부등호 비교연산은 문자값도 숫자로 변환하여 연산함
+  // cf) 부등호 비교연산은 문자값도 숫자로 변환하여 연산함
   if (!numVal) {
     alert("값을 입력하세요");
   } else if (numVal <= 0) {

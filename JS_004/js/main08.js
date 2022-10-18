@@ -11,6 +11,13 @@ const inputPw = document.querySelector("#password");
 const inputRePw = document.querySelector("#re_password");
 const btnSubmit = document.querySelector(".btn_submit");
 
+/**
+ * cf) 
+ * - if문에서 else if 나 else 는
+ *   유지보수를 어렵게 하므로 사용을 자제할 것
+ * - 변수명은 길더라도 뜻을 알아보기 쉽게 할 것
+*/
+
 btnSubmit?.addEventListener("click", () => {
   const userVal = inputUser.value;
   const pwVal = inputPw.value;
