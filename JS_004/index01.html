@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      body > div {
+        /* div box 내부에 있는 text, inline tag를 정렬 */
+        text-align: center;
+        /* div box 의 4방향(상, 오른쪽, 하, 왼쪽) 여백 */
+        /* block tag 많이 사용하는 기법
+        상하 여백을 지정하고 화면 중앙에 box를 배치하는 기법 */
+        margin: 10px auto;
+        /* div box 의 4방향의 내부 여백(마치 공기 주입) */
+        padding: 10px;
+        width: 500px;
+      }
+      #divBox {
+        border: 2px solid blue;
+        font-size: 25px;
+      }
+      button {
+        border-radius: 15px;
+        /* margin, padding 을 설정할 때 
+        고정값으로 px 단위를 사용하지만
+        rem, em 단위를 사용하는 것을 권장한다
+        이 단위는 화면에 보이는 text의 크기에 따라
+        비율적으로 여백을 지정할 수 있다
+        1(r)em : 글자와 1 대 1 크기
+        0.5(r)em : 글자 대 여백 = 1 : 0.5
+        1.5(r)em : 글자 대 여백 = 1 : 1.5 */
+        padding: 0.5em 1.5em;
+        width: 6em;
+        height: 3em;
+        border: none;
+        /* 버튼을 클릭했을 때 나타나는 희미한 실선 */
+        outline: none;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      #btnRed {
+        background-color: red;
+        color: white;
+      }
+      #btnBlue {
+        background-color: blue;
+        color: white;
+      }
+      #btnYellow {
+        background-color: yellow;
+      }
+      /*
+       :hover
+       css 에서 가상 클래스
+       js를 사용하여 event 등을 수행했던 것을
+       css 에서 할 수 있도록 만들어주는 확장 도구
+       hover = tag 에 마우스가 올라갔을 때
+       */
+      button:hover {
+        box-shadow: 2px 2px 2px 2px #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="divBox">안녕하세요</div>
+    <div id="btnBox">
+      <button id="btnRed" type="button">Red</button>
+      <button id="btnBlue" type="button">Blue</button>
+      <button id="btnYellow" type="button">Yellow</button>
+    </div>
+  </body>
+  <script src="js/main01.js"></script>
+</html>
