@@ -4,60 +4,50 @@
  * 2. 화면의 UI를 각자 디자인
  */
 
-const tableBody = document.querySelector("tbody.addr");
-const btnSubmit = document.querySelector("button");
-
+const tbody = document.querySelector("tbody.addr");
+const btnAdd = document.querySelector("button");
 const input = {
   name: document.querySelector("input[name='name']"),
   addr: document.querySelector("input[name='addr']"),
   tel: document.querySelector("input[name='tel']"),
-};
+}
 
-btnSubmit?.addEventListener("click", () => {
+btnAdd?.addEventListener("click", () => {
+
   const value = {
     name: input.name.value,
-    chkName: () => {
-      if (!value.name) {
-        alert("이름을 입력하세요");
-        input.name.focus();
-        return false;
-      }
-    },
     addr: input.addr.value,
-    chkAddr: () => {
-      if (!value.addr) {
-        alert("주소를 입력하세요");
-        input.addr.focus();
-        return false;
-      }
-    },
     tel: input.tel.value,
-    chkTel: () => {
-      if (!value.tel) {
-        alert("전화번호를 입력하세요");
-        input.tel.focus();
-        return false;
-      }
-    },
-  };
+  }
 
-  value.chkName();
-  value.chkAddr();
-  value.chkTel();
-
+  if (!value.name) {
+    alert("이름을 입력하세요");
+    input.name.focus();
+    return false;
+  }
+  if (!value.addr) {
+    alert("주소를 입력하세요");
+    input.addr.focus();
+    return false;
+  }
+  if (!value.tel) {
+    alert("전화번호를 입력하세요");
+    input.tel.focus();
+    return false;
+  }
+  
   const tr = document.createElement("TR");
+  const tdName = document.createElement("TD");
+  const tdAddr = document.createElement("TD");
+  const tdTel = document.createElement("TD");
 
-  let tdName = document.createElement("TD");
   tdName.innerText = value.name;
-  tr.appendChild(tdName);
-
-  tdAddr = document.createElement("TD");
   tdAddr.innerText = value.addr;
-  tr.appendChild(tdAddr);
-
-  tdTel = document.createElement("TD");
   tdTel.innerText = value.tel;
+
+  tr.appendChild(tdName);
+  tr.appendChild(tdAddr);
   tr.appendChild(tdTel);
 
-  tableBody.appendChild(tr);
+  tbody.appendChild(tr);
 });
