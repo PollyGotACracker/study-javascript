@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 주소록</title>
+    <style>
+      table.addr {
+        border-collapse: collapse;
+        width: 90vw;
+        margin: 20px auto;
+      }
+      th {
+        background-color: #ccc;
+        padding: 1em;
+        font-size: 15pt;
+      }
+      tr {
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+      }
+      td {
+        padding: 15px 0;
+      }
+      div {
+        border: 1px solid transparent;
+        width: 60vw;
+        margin: 0 auto;
+        padding: 30px 0;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+      }
+      div > * {
+        margin: 10px;
+        box-sizing: border-box;
+      }
+      div > input {
+        padding: 0.5em;
+        outline: none;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        flex: 1;
+        flex-shrink: 1;
+        width: 40%;
+      }
+      div > input:focus {
+        border: 1px solid black;
+      }
+      div > button {
+        background-color: #ccc;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 15pt;
+        font-weight: bold;
+        padding: 0.5em;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input name="name" placeholder="이름..." />
+      <input name="addr" placeholder="주소..." />
+      <input name="tel" placeholder="전화번호..." />
+      <button class="add">추가</button>
+    </div>
+    <table class="addr">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>주소</th>
+          <th>전화번호</th>
+        </tr>
+      </thead>
+      <tbody class="addr"></tbody>
+    </table>
+  </body>
+  <script src="js/main11A.js"></script>
+</html>
