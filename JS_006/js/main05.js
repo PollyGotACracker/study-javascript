@@ -14,7 +14,7 @@ const addrLoad = () => {
   console.table(addrList);
 
   if (!addrList) {
-    // 최초 실행 시 addrList 값이 null이 되므로 빈 배열 선언
+    // cf) 최초 실행 시 addrList 값이 null이 되므로 빈 배열 선언
     addrList = [];
     return false;
   }
