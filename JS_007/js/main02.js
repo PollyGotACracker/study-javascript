@@ -22,22 +22,37 @@ const listAdd = () => {
     return false;
   }
 
-  for (i = 0; i < list.length; i++) {
-    let listObjVals = Object.values(list[i]);
+  // cf) Array.prototype.map을 이용
+  list.map((ele) => {
     const tr = document.createElement("TR");
+    let listObjVals = Object.values(ele);
 
-    for (j = 0; j < listObjVals.length; j++) {
+    listObjVals.map((ele) => {
       td = document.createElement("TD");
-      td.textContent = listObjVals[j];
+      td.textContent = ele;
       tr.appendChild(td);
-    }
+    });
 
     tbody.appendChild(tr);
-  } // array.prototype.map을 이용해볼 것
+  });
 };
+
 listAdd();
 
 const chkList = () => {
+  // 중복되는 학번 체크
+  for (i = 0; i < list.length; i++) {
+    if (inputs[0].value === list[i].num) {
+      alert(`중복되는 학번은 입력할 수 없습니다.`);
+    } else {
+      continue;
+    }
+    inputs[0].value = "";
+    inputs[0].focus();
+    return false;
+  }
+
+  // 빈 값과 성적 값의 범위 체크
   for (i = 0; i < inputs.length; i++) {
     if (!inputs[i].value) {
       alert(`${inputs[i].placeholder}을(를) 입력하세요.`);
@@ -54,9 +69,9 @@ const chkList = () => {
 };
 
 const addList = () => {
-  let sum =
+  let _sum =
     Number(inputs[2].value) + Number(inputs[3].value) + Number(inputs[4].value);
-  let avr = Math.round(sum / 3);
+  let _avr = Math.round(_sum / 3);
 
   let value = {
     num: inputs[0].value,
@@ -64,22 +79,22 @@ const addList = () => {
     kor: inputs[2].value,
     eng: inputs[3].value,
     math: inputs[4].value,
-    sum: sum,
-    avr: avr,
+    sum: _sum,
+    avr: _avr,
   };
 
   list.push(value);
   localStorage.setItem("myList", JSON.stringify(list));
-
-  let arrList = Object.values(value);
+  let objVals = Object.values(value);
 
   const tr = document.createElement("TR");
 
-  for (i = 0; i < Object.keys(value).length; i++) {
+  objVals.map((ele) => {
     const td = document.createElement("TD");
-    td.textContent = arrList[i];
+    td.textContent = ele;
     tr.appendChild(td);
-  }
+  });
+
   tbody.appendChild(tr);
 };
 
