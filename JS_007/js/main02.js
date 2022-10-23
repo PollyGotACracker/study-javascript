@@ -41,7 +41,7 @@ listAdd();
 
 const chkList = () => {
   // 중복되는 학번 체크
-  for (i = 0; i < list.length; i++) {
+  for (let i = 0; i < list.length; i++) {
     if (inputs[0].value === list[i].num) {
       alert(`중복되는 학번은 입력할 수 없습니다.`);
     } else {
@@ -53,7 +53,7 @@ const chkList = () => {
   }
 
   // 빈 값과 성적 값의 범위 체크
-  for (i = 0; i < inputs.length; i++) {
+  for (let i = 0; i < inputs.length; i++) {
     if (!inputs[i].value) {
       alert(`${inputs[i].placeholder}을(를) 입력하세요.`);
     } else if (i > 1 && (inputs[i].value > 100 || inputs[i].value < 0)) {
@@ -96,6 +96,11 @@ const addList = () => {
   });
 
   tbody.appendChild(tr);
+
+  // 모든 input 값 초기화
+  Array.from(inputs).map((e) => {
+    e.value = "";
+  });
 };
 
 btnAdd?.addEventListener("click", () => {
