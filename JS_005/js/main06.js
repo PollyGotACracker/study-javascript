@@ -13,16 +13,21 @@ const index = {
   tel: 2,
 };
 
+/**
+ * cf)
+ * 화살표 함수로 메서드를 정의하는 것은 바람직하지 않음
+ * ES6 메서드를 사용할 것
+ */
 const getValue = {
-  name: () => {
+  name() {
     const nameVal = inputs[index.name].value;
     spans[index.name].innerText = nameVal;
   },
-  addr: () => {
+  addr() {
     const addVal = inputs[index.addr].value;
     spans[index.addr].innerText = addVal;
   },
-  tel: () => {
+  tel() {
     const telVal = inputs[index.tel].value;
     spans[index.tel].innerText = telVal;
   },

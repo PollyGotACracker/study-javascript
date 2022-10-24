@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      width: 100vw;
+      height: 100vh;
+    }
+    body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 1.2rem;
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 1px black;
+      background-image: url("images/bg_images_01.jpg");
+      background-size: 100% 100%;
+      background-position: bottom;
+    }
+    nav {
+      background-color: #777;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+    }
+    /*
+    nav 메뉴에 마우스가 hover 되면
+    하단에 두꺼운 line 을 형성하여 보여주는 style 구현
+    이때 hover 에서 line 을 주면
+    마우스가 hover 되었을 때 메뉴 부분이 출렁거리는 현상이 나타난다
+    이 현상을 방지하기 위하여 기본 속성(li)에 line의 굵기만큼 transparent 색상으로
+    border-bottom 을 설정해둔다
+    */
+    li {
+      margin: 8px;
+      padding: 10px 16px 8px 16px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      font-weight: 900;
+      /*
+      기본 속성에서 hover 속성으로 변화가 일어날 때
+      딜레이를 주어 조금 부드럽게 변화되도록 하는 기법
+      */
+      transition: border 0.5s, background-color 1s;
+    }
+    /* cf) hover일 때 기본 폰트 영문의 font-weight 를 굵게 하면 UI가 변경된다 */
+    li:hover {
+      border-bottom: 3px solid rgb(248, 248, 66);
+      background-color: yellow;
+    }
+    footer {
+      background-color: #777;
+      font-size: 8px;
+      text-align: center;
+      padding: 0.9em;
+    }
+    section {
+      flex: 1;
+      /*
+      box 크기가 고정된 상태에서
+      내부의 content 가 box 크기보다 큰 경우
+      overflow 를 지정하면 box 내부에서 content 가
+      머물도록 할 수 있다
+      hidden: box 보다 넘치는 content 를 잘라서 보이지 않게
+      scroll: 항상 scroll bar 가 보이도록
+      auto: content 가 넘치는 경우에만 scroll bar 가 나타나도록
+      
+      overflow: width, height 에 모두 적용
+      overflow-y: height 에만 적용
+      overflow-x: width 에만 적용
+      */
+      /* 각각의 section에 overflow auto */
+      overflow: auto;
+      display: flex;
+    }
+    div {
+      margin: 10px;
+      overflow: auto;
+    }
+    /*
+    cf)
+    section 자체를 flexbox 로 만들고 div 를 flex item 으로 
+    div 에 flex 를 주어 다단 형식으로 만듬
+    */
+    div:nth-of-type(1),
+    div:nth-of-type(3) {
+      flex: 1;
+    }
+    div:nth-of-type(2) {
+      flex: 3;
+    }
+    img {
+      float: left;
+      /* top, right, bottom, left */
+      margin: 0 10px 10px 0;
+      border-radius: 15px;
+    }
+    div:nth-of-type(1) img {
+      /* box 를 둥근 원으로 설정하기 */
+      border-radius: 50%;
+    }
+  </style>
+  <body>
+    <header>
+      <h1>반갑습니다</h1>
+      <p>나의 홈페이지에 오신 것을 환영합니다</p>
+    </header>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>공지사항</li>
+        <li>자유게시판</li>
+        <li>로그인</li>
+        <li>회원가입</li>
+      </ul>
+    </nav>
+    <section>
+      <div>
+        <img src="images/bg_images_02.jpg" width="100px" />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+        voluptas ex impedit quasi cum reiciendis nihil vitae corrupti delectus
+        maiores! Minima necessitatibus non numquam aut porro molestias explicabo
+        harum consectetur. Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Sapiente voluptas ex impedit quasi cum reiciendis nihil vitae
+        corrupti delectus maiores! Minima necessitatibus non numquam aut porro
+        molestias explicabo harum consectetur. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Sapiente voluptas ex impedit quasi cum
+        reiciendis nihil vitae corrupti delectus maiores! Minima necessitatibus
+        non numquam aut porro molestias explicabo harum consectetur.
+      </div>
+      <div>
+        <img src="images/bg_images_01.jpg" width="200px" />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+        voluptas ex impedit quasi cum reiciendis nihil vitae corrupti delectus
+        maiores! Minima necessitatibus non numquam aut porro molestias explicabo
+        harum consectetur. Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Sapiente voluptas ex impedit quasi cum reiciendis nihil vitae
+        corrupti delectus maiores! Minima necessitatibus non numquam aut porro
+        molestias explicabo harum consectetur. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Sapiente voluptas ex impedit quasi cum
+        reiciendis nihil vitae corrupti delectus maiores! Minima necessitatibus
+        non numquam aut porro molestias explicabo harum consectetur. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Sapiente voluptas ex
+        impedit quasi cum reiciendis nihil vitae corrupti delectus maiores!
+        Minima necessitatibus non numquam aut porro molestias explicabo harum
+        consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Sapiente voluptas ex impedit quasi cum reiciendis nihil vitae corrupti
+        delectus maiores! Minima necessitatibus non numquam aut porro molestias
+        explicabo harum consectetur. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Sapiente voluptas ex impedit quasi cum reiciendis
+        nihil vitae corrupti delectus maiores! Minima necessitatibus non numquam
+        aut porro molestias explicabo harum consectetur. Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Sapiente voluptas ex impedit quasi
+        cum reiciendis nihil vitae corrupti delectus maiores! Minima
+        necessitatibus non numquam aut porro molestias explicabo harum
+        consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Sapiente voluptas ex impedit quasi cum reiciendis nihil vitae corrupti
+        delectus maiores! Minima necessitatibus non numquam aut porro molestias
+        explicabo harum consectetur. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Sapiente voluptas ex impedit quasi cum reiciendis
+        nihil vitae corrupti delectus maiores! Minima necessitatibus non numquam
+        aut porro molestias explicabo harum consectetur. Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Sapiente voluptas ex impedit quasi
+        cum reiciendis nihil vitae corrupti delectus maiores! Minima
+        necessitatibus non numquam aut porro molestias explicabo harum
+        consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Sapiente voluptas ex impedit quasi cum reiciendis nihil vitae corrupti
+        delectus maiores! Minima necessitatibus non numquam aut porro molestias
+        explicabo harum consectetur. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Sapiente voluptas ex impedit quasi cum reiciendis
+        nihil vitae corrupti delectus maiores! Minima necessitatibus non numquam
+        aut porro molestias explicabo harum consectetur. Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Sapiente voluptas ex impedit quasi
+        cum reiciendis nihil vitae corrupti delectus maiores! Minima
+        necessitatibus non numquam aut porro molestias explicabo harum
+        consectetur.v Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Sapiente voluptas ex impedit quasi cum reiciendis nihil vitae corrupti
+        delectus maiores! Minima necessitatibus non numquam aut porro molestias
+        explicabo harum consectetur. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Sapiente voluptas ex impedit quasi cum reiciendis
+        nihil vitae corrupti delectus maiores! Minima necessitatibus non numquam
+        aut porro molestias explicabo harum consectetur.
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+        voluptas ex impedit quasi cum reiciendis nihil vitae corrupti delectus
+        maiores! Minima necessitatibus non numquam aut porro molestias explicabo
+        harum consectetur. Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Sapiente voluptas ex impedit quasi cum reiciendis nihil vitae
+        corrupti delectus maiores! Minima necessitatibus non numquam aut porro
+        molestias explicabo harum consectetur. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Sapiente voluptas ex impedit quasi cum
+        reiciendis nihil vitae corrupti delectus maiores! Minima necessitatibus
+        non numquam aut porro molestias explicabo harum consectetur. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Sapiente voluptas ex
+        impedit quasi cum reiciendis nihil vitae corrupti delectus maiores!
+        Minima necessitatibus non numquam aut porro molestias explicabo harum
+        consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Sapiente voluptas ex impedit quasi cum reiciendis nihil vitae corrupti
+        delectus maiores! Minima necessitatibus non numquam aut porro molestias
+        explicabo harum consectetur. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Sapiente voluptas ex impedit quasi cum reiciendis
+        nihil vitae corrupti delectus maiores! Minima necessitatibus non numquam
+        aut porro molestias explicabo harum consectetur. Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Sapiente voluptas ex impedit quasi
+        cum reiciendis nihil vitae corrupti delectus maiores! Minima
+        necessitatibus non numquam aut porro molestias explicabo harum
+        consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Sapiente voluptas ex impedit quasi cum reiciendis nihil vitae corrupti
+        delectus maiores! Minima necessitatibus non numquam aut porro molestias
+        explicabo harum consectetur. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Sapiente voluptas ex impedit quasi cum reiciendis
+        nihil vitae corrupti delectus maiores! Minima necessitatibus non numquam
+        aut porro molestias explicabo harum consectetur. Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Sapiente voluptas ex impedit quasi
+        cum reiciendis nihil vitae corrupti delectus maiores! Minima
+        necessitatibus non numquam aut porro molestias explicabo harum
+        consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Sapiente voluptas ex impedit quasi cum reiciendis nihil vitae corrupti
+        delectus maiores! Minima necessitatibus non numquam aut porro molestias
+        explicabo harum consectetur. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Sapiente voluptas ex impedit quasi cum reiciendis
+        nihil vitae corrupti delectus maiores! Minima necessitatibus non numquam
+        aut porro molestias explicabo harum consectetur. Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Sapiente voluptas ex impedit quasi
+        cum reiciendis nihil vitae corrupti delectus maiores! Minima
+        necessitatibus non numquam aut porro molestias explicabo harum
+        consectetur.v Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Sapiente voluptas ex impedit quasi cum reiciendis nihil vitae corrupti
+        delectus maiores! Minima necessitatibus non numquam aut porro molestias
+        explicabo harum consectetur. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Sapiente voluptas ex impedit quasi cum reiciendis
+        nihil vitae corrupti delectus maiores! Minima necessitatibus non numquam
+        aut porro molestias explicabo harum consectetur.
+      </div>
+    </section>
+    <footer>
+      <address>CopyRight &copy; bitterns96@gmail.com</address>
+    </footer>
+  </body>
+</html>

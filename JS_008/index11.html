@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      /*
+      ellipsis 효과: 말줄임표
+      box 의 크기를 고정하고(px 로 설정하는 것이 더 정확)
+      white-space: nowrap; : 줄바꿈 X
+      overflow: hidden; : 스크롤바 X
+      text-overflow: ellipsis;
+      */
+      div:nth-of-type(1) {
+        margin: 20px auto;
+        width: 10%;
+        border: 1px solid #aaa;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      div:nth-of-type(2) {
+        margin: 20px auto;
+        width: 20%;
+        border: 1px solid #aaa;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        /* 단어 단위로 줄바꿈을 하라 */
+        word-wrap: break-word;
+        /* 
+        cf)
+        word-wrap 과 break-word
+        word-wrap: 박스 밖으로 넘치는 문장을 어떻게 자를 것인지
+        break-word: 박스 내에서 줄바꿈을 어떻게 할 것인지
+        */
+
+        /*
+        한 라인의 높이를 1.2em 으로 하고
+        3라인을 표현해야 하기 때문에 box 의 height 를 1.2 * 3 으로
+        */
+        /* cf) line-height: 각 line의 높이 지정 */
+        line-height: 1.2em;
+        height: 3.6em;
+
+        /* 
+        실험적인(공식적이 아닌) 속성
+        이 속성을 적용하면 멀티라인 ellipsis 효과를
+        낼 수 있다
+        */
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* 라인 수 */
+        -webkit-box-orient: vertical;
+        /*
+        cf)
+        display: -webkit-box; : float 대신 block 요소를 배치할 때 사용
+        -webkit-line-clamp : block 요소의 콘텐츠를 지정한 줄 수만큼으로 제한
+        -webkit-box-orient : block 요소를 수평 또는 수직으로 배치
+        */
+      }
+    </style>
+  </head>
+  <body>
+    <div>나는 자랑스러운 태극기 앞에 조국과 민족의 무궁한</div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit
+      quia, iusto non, autem voluptas sequi error quaerat culpa minima dolore
+      harum accusamus! Earum odit unde sapiente atque iure. Fuga. Lorem ipsum
+      dolor sit amet, consectetur adipisicing elit. Reiciendis enim maiores
+      minus voluptatum molestias error temporibus dicta at omnis alias. Dolore
+      ratione architecto odio accusantium. Neque eius eligendi atque placeat?
+    </div>
+  </body>
+</html>

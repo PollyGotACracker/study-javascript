@@ -22,7 +22,8 @@ const listAdd = () => {
     return false;
   }
 
-  // cf) Array.prototype.map을 이용
+  // cf) Array.prototype.map을 이용하여
+  // 각 객체의 value 를 td 에 넣어서 출력
   list.map((ele) => {
     const tr = document.createElement("TR");
     let listObjVals = Object.values(ele);
@@ -40,6 +41,11 @@ const listAdd = () => {
 listAdd();
 
 const chkList = () => {
+  /**
+   * cf)
+   * forEach, filter 메소드는 비동기 처리 방식이기 때문에
+   * 콜백 함수를 인수로 받지 않으면 순차 처리가 불가능하다
+   */
   // 중복되는 학번 체크
   for (let i = 0; i < list.length; i++) {
     if (inputs[0].value === list[i].num) {
