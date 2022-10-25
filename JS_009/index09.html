@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+  </head>
+  <body></body>
+  <script>
+    // num1, num2가 계속 기억장소를 차지
+    let num1 = 100;
+    let num2 = 200;
+    document.writeln(num1 + num2);
+
+    // 기명 함수로 묶으면 함수가 종료될 때 지역변수는 GC 됨
+    // 하지만 함수 자체는 계속 메모리에 존재
+    // 자주 호출할 필요가 있을 때 사용
+    const init = () => {
+      let num1 = 200;
+      let num2 = 300;
+      document.writeln(num1 + num2);
+    };
+    init();
+
+    // IIFE(Immediately Invoked Function Expression)
+    // 즉시실행 함수. JS에만 존재하는 문법
+    // 이름이 없는 무명함수이며 한번만 실행되고 메모리에서 소멸된다
+    // 스크립트가 시작될 때 최초의 단 한번만 실행하고 더 이상 실행할 이유가 없는
+    // 함수 선언하고 "즉시 실행(함수의 즉시 실행)"
+    // 메모리 leak(누수) 방지
+    //       = 사용하지 않는 메모리 공간 낭비를 방지
+    (() => {
+      let num1 = 100;
+      let num2 = 200;
+      document.writeln(num1 + num2);
+    })();
+
+    // 예전 문법
+    (function () {
+      document.writeln("즉시실행 함수");
+    });
+  </script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+  </head>
+  <body>
+    <h1>클릭하세요</h1>
+    <h2>나도 클릭</h2>
+    <h3>나는 클릭</h3>
+  </body>
+  <script>
+    const h1 = document.querySelector("h1");
+    const h2 = document.querySelector("h2");
+    const h3 = document.querySelector("h3");
+    const numAdd = (num1, num2) => num1 + num2;
+    // numAdd() 함수를 호출하라(실행하라)
+    numAdd();
+
+    /**
+     * cf)
+     * EventListener 에 함수명() 을 사용하면 함수가 즉시실행되므로
+     *      사용해서는 안된다.
+     * EventListener 에 들어가는 인수는 Callback 함수이다.
+     */
+
+    // h1ClickHandler Callback 함수를 EventListener 에 등록해달라
+    // 여기에서는 함수에 () 절대 붙이면 안된다
+    // Callback 함수를 선언하고 등록하는 이유는
+    // 같은 Callback 함수를 여러 (tag에) 번 등록하고 싶을 때
+    const h1ClickHandler = (e) => {};
+    h1?.addEventListener("click", h1ClickHandler);
+    h2?.addEventListener("click", h1ClickHandler);
+    h3?.addEventListener("click", h1ClickHandler);
+
+    // () => {  } : 익명함수(무명함수) 사용
+    // 한 번에 한 곳에 등록하고 싶을 때
+    // 무명함수를 선언하고 선언된 함수를 event 핸들러로 등록
+    h1?.addEventListener("mouseover", () => {
+      h1.textContent = "반가워";
+    });
+    h1?.addEventListener("mouseout", () => {
+      h1.textContent = "잘 가";
+    });
+  </script>
+</html>

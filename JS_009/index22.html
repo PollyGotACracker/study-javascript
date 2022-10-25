@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    html {
+      width: 100vw;
+    }
+    body {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    section {
+      width: 800px;
+      padding: 0 2em;
+      display: flex;
+      margin: 1em;
+      justify-content: center;
+      align-items: center;
+    }
+    section:nth-of-type(1) {
+      border: 1px solid blue;
+    }
+    section:nth-of-type(2) {
+      border: 1px solid green;
+    }
+    section:nth-of-type(3) {
+      border: 1px solid red;
+    }
+    section > span {
+      font-weight: 900;
+      font-size: 30pt;
+      white-space: nowrap;
+    }
+    div {
+      padding: 3em;
+    }
+    div > span {
+      border: 1px solid #999;
+      padding: 1em;
+      width: 50px;
+      height: 50px;
+      margin: 0.5em;
+    }
+    button {
+      width: 200px;
+    }
+  </style>
+  <body>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <span>짝수</span>
+      <div></div>
+    </section>
+    <section>
+      <span>홀수</span>
+      <div></div>
+    </section>
+    <button>새로고침</button>
+  </body>
+  <script src="js/main22.js"></script>
+</html>
