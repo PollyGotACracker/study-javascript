@@ -21,17 +21,23 @@ const showArr = () => {
     spans.textContent = e;
     divs[0].appendChild(spans);
   });
+<<<<<<< HEAD
+=======
 
+>>>>>>> 22471966a1cf1362d6127cafac110dca81ce4d8c
   arr.forEach((e) => {
-    if (e % 2 === 1) {
+    if (e % 2 === 0) {
       let spans = document.createElement("SPAN");
       spans.textContent = e;
       divs[1].appendChild(spans);
     }
   });
+<<<<<<< HEAD
+=======
 
+>>>>>>> 22471966a1cf1362d6127cafac110dca81ce4d8c
   arr.forEach((e) => {
-    if (e % 2 === 0) {
+    if (e % 2 === 1) {
       let spans = document.createElement("SPAN");
       spans.textContent = e;
       divs[2].appendChild(spans);
