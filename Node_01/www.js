@@ -13,9 +13,9 @@ const createCallback = () => {
   console.log("Server Create");
 };
 
-//express framework 를 사용하기 위한 도구
+// express framework 를 사용하기 위한 도구
 const app = express();
-// nodejs 의 http 서비스와 express framework 를 연동하기
+// NodeJS 의 http 서비스와 express framework 를 연동하기
 const server = http.createServer(app);
 server.listen(port, host, () => {
   console.log("Start Server");
@@ -23,7 +23,8 @@ server.listen(port, host, () => {
 
 /**
  * form 에서 POST method 로 전송된 데이터를
- * req.body 속성으로 접근하기 위한 설정
+ * req.body 속성으로 접근하기 위한 설정(body 데이터를 해석)
+ * extended: false 옵션은 NodeJS에 기본으로 내장된 querystring 모듈 사용
  */
 app.use(express.urlencoded({ extended: false }));
 
@@ -35,7 +36,7 @@ app.get("/user", (req, res) => {
   res.end("Hello User");
 });
 
-// cf) /:name은 매개변수이다. : req.params.name
+// cf) /:name은 속성명이다. name 속성의 값을 req.params.name 으로 가져온다
 app.get("/user/:name", (req, res) => {
   // cf) Header 의 Content-Type 속성에 UTF-8 적용, 영어 이외 글자도 사용 가능
   res.setHeader("Content-Type", "text/html;charset=UTF-8");
@@ -56,6 +57,7 @@ app.get("/korea", (req, res) => {
  */
 app.get("/input", (req, res) => {
   const query = req.query;
+  // query의 속성명은 html input tag의 name 값과 동일하다
   const data = {
     이름: query.name,
     전화번호: query.tel,
@@ -92,6 +94,22 @@ app.post("/input", (req, res) => {
   };
   res.json(data);
 });
+
+
+
+/**
+ * cf)
+ * https://stackoverflow.com/questions/15601703/difference-between-app-use-and-app-get-in-express-js
+ * 
+ * app.use() is intended for binding middleware to your application. 
+ *    The path is a "mount" or "prefix" path and limits the middleware 
+ *    to only apply to any paths requested that begin with it. 
+ *    It can even be used to embed another application.
+ * 
+ * app.get(), on the other hand, is part of Express' application routing 
+ *    and is intended for matching and handling a specific route 
+ *    when requested with the GET HTTP verb.
+ */
 
 /**
  * cf)
