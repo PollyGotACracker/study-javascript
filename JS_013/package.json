@@ -1,0 +1,15 @@
+{
+  "name": "js_013",
+  "version": "1.0.0",
+  "description": "",
+  "main": "www.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bitterns96@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
