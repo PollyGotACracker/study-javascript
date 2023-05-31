@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>대한 고등학교</h1>
+      <p>대한고등학교 학생정보관리 2022</p>
+    </header>
+    <div>
+      <input name="num" placeholder="학번" type="number" />
+      <input name="name" placeholder="이름" type="text" />
+      <input name="depart" placeholder="학과" type="text" />
+      <input name="years" placeholder="학년" type="number" />
+      <input name="tel" placeholder="전화번호" type="text" />
+      <input name="addr" placeholder="주소" type="text" />
+      <button id="btn_add" type="button">추가</button>
+    </div>
+    <section>
+      <table id="student_list">
+        <thead>
+          <tr>
+            <th>학번</th>
+            <th>이름</th>
+            <th>학과</th>
+            <th>학년</th>
+            <th>전화번호</th>
+            <th>주소</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </body>
+</html>

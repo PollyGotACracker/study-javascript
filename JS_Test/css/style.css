@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  width: 100vw;
+}
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  width: 100%;
+  height: 12em;
+  background-color: #444;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+header > * {
+  margin: 0.2em;
+}
+header > h1 {
+  font-size: 30pt;
+}
+header > p {
+  font-size: 16pt;
+}
+div {
+  border: 1px solid #444;
+  margin: 1em 0;
+  width: 90%;
+  padding: 0.5% 5%;
+  display: flex;
+  justify-content: space-around;
+}
+div > * {
+  padding: 0.6em;
+  margin: 0.5em;
+  outline: none;
+  border-radius: 5px;
+}
+div > input {
+  width: 30%;
+  border: 1px solid #444;
+}
+div > input:focus {
+  box-shadow: 0 0 3px rgb(82, 82, 235);
+  caret-color: rgb(82, 82, 235);
+}
+#btn_add {
+  background-color: #444;
+  color: white;
+  border: none;
+  width: 150px;
+  white-space: nowrap;
+  font-size: 12pt;
+  font-weight: 700;
+  /* cursor:pointer 를 빠뜨림 */
+}
+#btn_add:hover {
+  background-color: rgb(82, 82, 235);
+}
+section {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+#student_list {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 0 auto;
+}
+#student_list th,
+td {
+  text-align: center;
+  padding: 0.5em;
+}
+#student_list th {
+  background-color: #444;
+  color: white;
+  font-size: 14pt;
+}
+#student_list td {
+  border-bottom: 1px solid #999;
+}
